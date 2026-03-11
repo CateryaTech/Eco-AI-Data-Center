@@ -1,0 +1,77 @@
+# ==============================================================================
+# Eco AI Data Center — Requirements
+# CateryaTech | cateryatech@proton.me
+# https://github.com/cateryatech/Eco-AI-Data-Center
+#
+# Streamlit Cloud compatible — all optional/heavy deps are commented out.
+# The app gracefully degrades without any of the optional packages.
+# ==============================================================================
+
+# --- Core Framework ---
+streamlit>=1.35.0
+
+# --- Data Processing ---
+pandas>=2.2.0
+numpy>=1.26.0
+
+# --- Machine Learning ---
+scikit-learn>=1.4.0
+
+# --- Optimisation (LP/ILP) ---
+PuLP>=2.8.0
+
+# --- Visualisation ---
+plotly>=5.22.0
+
+# --- Utilities ---
+python-dotenv>=1.0.1
+pydantic>=2.7.0
+
+# --- HTTP (Prometheus, Pinata IPFS, Mixpanel, GA4) ---
+requests>=2.32.0
+
+# ==============================================================================
+# OPTIONAL — Uncomment only for self-hosted / enterprise deployments.
+# Streamlit Cloud runs fully without any of the below.
+# ==============================================================================
+
+# --- Blockchain / Polygon / IPFS ---
+# web3>=6.0.0
+# NOTE: web3 needs C extensions — NOT buildable on Streamlit Cloud free tier.
+# App auto-falls back to LocalProvenanceRegistry (fully functional mock).
+# Self-hosted: uncomment + add build-essential to packages.txt
+
+# --- LSTM Predictive Maintenance ---
+# torch>=2.3.0                # falls back to Holt-Winters (sklearn) automatically
+
+# --- Quantum Simulation ---
+# pennylane>=0.36.0           # falls back to numpy classical simulation automatically
+
+# --- Background Tasks ---
+# celery>=5.4.0               # falls back to synchronous execution automatically
+# redis>=5.0.0
+
+# --- Stripe Billing ---
+# stripe>=10.12.0
+
+# --- InfluxDB Time-Series ---
+# influxdb-client>=3.6.0
+
+# --- FastAPI + GraphQL ---
+# fastapi>=0.111.0
+# uvicorn>=0.30.0
+# strawberry-graphql>=0.235.0
+
+# --- Big Data ---
+# dask[dataframe]>=2024.5.0
+
+# --- AWS ---
+# boto3>=1.34.0
+
+# --- Testing (CI only) ---
+# pytest>=8.2.0
+# pytest-cov>=5.0.0
+
+# --- Code Quality (CI only) ---
+# black>=24.4.0
+# flake8>=7.0.0
