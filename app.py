@@ -1562,7 +1562,7 @@ def main():
             st.markdown("#### Save Current Simulation State")
             data = get_data()
             commit_msg = st.text_input("Commit message:", placeholder="e.g. Improved cooling config — PUE reduced to 1.3")
-            author_name = current_user.username if current_user else st.text_input("Author:", value="analyst")
+            author_name = current_user.username if current_user else st.text_input("Author:", value="analyst", key="vc_commit_author")
 
             if st.button("💾 Commit Snapshot", type="primary", use_container_width=True):
                 if not commit_msg:
@@ -1723,7 +1723,8 @@ def main():
                 report_type = st.selectbox("Report Type:", ["full", "kpi", "compliance", "simulation"])
             with rc2:
                 report_author = st.text_input(
-                    "Author:", value=current_user.username if current_user else "analyst"
+                    "Author:", value=current_user.username if current_user else "analyst",
+                    key="report_author_input"
                 )
                 incl_compliance = st.checkbox("Include compliance data", value=True)
 
